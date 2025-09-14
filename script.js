@@ -69,7 +69,7 @@
         var td3 = document.createElement("td");
         var btn = document.createElement("button");
         btn.className = "btn small ghost";
-        btn.textContent = "Slett";
+        btn.textContent = "Remove";
         btn.addEventListener("click", function () {
           state.orders.splice(idx, 1);
           saveAndRender();
@@ -84,7 +84,7 @@
   function md() {
     var t = total();
     var tri =
-      "| Tier | Antall |\n" +
+      "| Tier | Amount |\n" +
       "|---|---:|\n" +
       "| T1 | " + (state.counts.T1 || 0) + "|\n" +
       "| T2 | " + (state.counts.T2 || 0) + "|\n" +
@@ -93,7 +93,7 @@
       "| **Totalt** | **" + t + "** |";
 
     var orders = state.orders.length ? ("\n**Logistics orders**\n\n" + ordersText() + "\n") : "";
-    var notes = state.notes ? ("**Notater:** " + state.notes + "\n") : "";
+    var notes = state.notes ? ("**Notes:** " + state.notes + "\n") : "";
     return "### Treated Casualties Report\n\n" + tri + "\n\n" + orders + notes;
   }
   function renderPreview() {
@@ -171,7 +171,7 @@
         }
         tdO.textContent = ordersList.join("; ");
         var tdA = document.createElement("td");
-        var bV = document.createElement("button"); bV.className = "btn ghost small"; bV.textContent = "Vis";
+        var bV = document.createElement("button"); bV.className = "btn ghost small"; bV.textContent = "Show";
         bV.addEventListener("click", function () {
           state = JSON.parse(JSON.stringify(rec));
           saveAndRender();
@@ -245,7 +245,7 @@
     var copyOrders = $("copyOrders");
     if (copyOrders) copyOrders.addEventListener("click", function () {
       var text = ordersText();
-      if (!text.trim()) return alert("Ingen items i listen");
+      if (!text.trim()) return alert("No Item in the list");
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(function () { alert("Kopiert!"); }, function () { download("logistics.txt", text); });
       } else {
