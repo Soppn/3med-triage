@@ -14,49 +14,47 @@
       <!-- TRIAGE COUNTER -->
       <div>
         <h2 style="margin:0 0 8px">Triage</h2>
-        <div class="grid">
+
+        <!-- responsive triage grid -->
+        <div class="grid triage">
           <div class="pill">
             <div class="left"><span class="tag t1">T1</span><span class="muted">Immediate</span></div>
-            <div>
+            <div class="pill-controls">
               <button class="btn small ghost" data-dec="T1">−</button>
               <span id="count-T1" class="kbd">0</span>
               <button class="btn small" data-inc="T1">+1</button>
             </div>
           </div>
+
           <div class="pill">
             <div class="left"><span class="tag t2">T2</span><span class="muted">Delayed</span></div>
-            <div>
+            <div class="pill-controls">
               <button class="btn small ghost" data-dec="T2">−</button>
               <span id="count-T2" class="kbd">0</span>
               <button class="btn small" data-inc="T2">+1</button>
             </div>
           </div>
+
           <div class="pill">
             <div class="left"><span class="tag t3">T3</span><span class="muted">Minimal</span></div>
-            <div>
+            <div class="pill-controls">
               <button class="btn small ghost" data-dec="T3">−</button>
               <span id="count-T3" class="kbd">0</span>
               <button class="btn small" data-inc="T3">+1</button>
             </div>
           </div>
+
           <div class="pill">
             <div class="left"><span class="tag t4">T4</span><span class="muted">Deceased</span></div>
-            <div>
+            <div class="pill-controls">
               <button class="btn small ghost" data-dec="T4">−</button>
               <span id="count-T4" class="kbd">0</span>
               <button class="btn small" data-inc="T4">+1</button>
             </div>
           </div>
         </div>
-        <div class="divider"></div>
-        <div class="bar">
-          <button id="quickAdd" class="btn">Quick add +1 to choosen triage</button>
-          <select id="quickCat">
-            <option value="T1">T1</option>
-            <option value="T2" selected>T2</option>
-            <option value="T3">T3</option>
-            <option value="T4">T4</option>
-          </select>
+
+        <div class="bar" style="margin-top:8px">
           <span class="right muted">Total: <span id="tot" class="kbd">0</span></span>
         </div>
       </div>

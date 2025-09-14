@@ -24,12 +24,25 @@ textarea{min-height:80px}
 table{width:100%; border-collapse:collapse}
 th, td{border-bottom:1px solid var(--line); padding:8px; text-align:left}
 th{color:var(--muted)}
-.pill{display:flex; align-items:center; justify-content:space-between; border-radius:12px; padding:10px 12px; border:1px solid var(--line); background:#11131b}
+.pill{display:flex; align-items:center; justify-content:space-between; border-radius:12px; padding:10px 12px; border:1px solid var(--line); background:#11131b; gap:12px}
 .pill .left{display:flex; align-items:center; gap:10px}
 .tag{font-weight:700; font-size:.9rem; padding:2px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.08)}
 .t1{background:rgba(239,68,68,.15); color:#fecaca; border-color:rgba(239,68,68,.35)}
 .t2{background:rgba(245,158,11,.15); color:#fde68a; border-color:rgba(245,158,11,.35)}
 .t3{background:rgba(22,163,74,.15); color:#bbf7d0; border-color:rgba(22,163,74,.35)}
 .t4{background:rgba(168,85,247,.15); color:#e9d5ff; border-color:rgba(168,85,247,.35)}
-.kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; background:#0b0d13; border:1px solid var(--line); padding:2px 6px; border-radius:6px}
+.kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; background:#0b0d13; border:1px solid var(--line); padding:2px 6px; border-radius:6px; display:inline-block; min-width:2ch; text-align:center}
 .divider{height:1px; background:var(--line); margin:12px 0}
+
+/* NEW: responsive triage grid */
+.grid.triage{
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* NEW: flexible controls on the right */
+.pill-controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;   /* allows wrapping on narrow screens */
+}
