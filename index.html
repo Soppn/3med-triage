@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milsim – Triage & Logistics (solo)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Milsim – Triage & Logistics (solo)</h1>
+
+    <div class="card grid">
+      <!-- TRIAGE COUNTER -->
+      <div>
+        <h2 style="margin:0 0 8px">Triage</h2>
+        <div class="grid">
+          <div class="pill">
+            <div class="left"><span class="tag t1">T1</span><span class="muted">Immediate</span></div>
+            <div>
+              <button class="btn small ghost" data-dec="T1">−</button>
+              <span id="count-T1" class="kbd">0</span>
+              <button class="btn small" data-inc="T1">+1</button>
+            </div>
+          </div>
+          <div class="pill">
+            <div class="left"><span class="tag t2">T2</span><span class="muted">Delayed</span></div>
+            <div>
+              <button class="btn small ghost" data-dec="T2">−</button>
+              <span id="count-T2" class="kbd">0</span>
+              <button class="btn small" data-inc="T2">+1</button>
+            </div>
+          </div>
+          <div class="pill">
+            <div class="left"><span class="tag t3">T3</span><span class="muted">Minimal</span></div>
+            <div>
+              <button class="btn small ghost" data-dec="T3">−</button>
+              <span id="count-T3" class="kbd">0</span>
+              <button class="btn small" data-inc="T3">+1</button>
+            </div>
+          </div>
+          <div class="pill">
+            <div class="left"><span class="tag t4">T4</span><span class="muted">Deceased</span></div>
+            <div>
+              <button class="btn small ghost" data-dec="T4">−</button>
+              <span id="count-T4" class="kbd">0</span>
+              <button class="btn small" data-inc="T4">+1</button>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="bar">
+          <button id="quickAdd" class="btn">Quick add +1 to choosen triage</button>
+          <select id="quickCat">
+            <option value="T1">T1</option>
+            <option value="T2" selected>T2</option>
+            <option value="T3">T3</option>
+            <option value="T4">T4</option>
+          </select>
+          <span class="right muted">Total: <span id="tot" class="kbd">0</span></span>
+        </div>
+      </div>
+
+      <!-- LOGISTICS ORDERS -->
+      <div>
+        <h2 style="margin:6px 0 8px">Logistics orders</h2>
+        <div class="row">
+          <div>
+            <label for="logItem">Item</label>
+            <input id="logItem" placeholder="f.eks. Plasma IV, Bandages, Smoke x2" />
+          </div>
+          <div>
+            <label for="logQty">Amount</label>
+            <input id="logQty" type="number" min="1" inputmode="numeric" placeholder="f.eks. 6" />
+          </div>
+        </div>
+        <div class="bar" style="margin-top:6px">
+          <button id="addOrder" class="btn primary">Add</button>
+          <button id="clearOrders" class="btn ghost">Empty list</button>
+        </div>
+        <table id="ordersTable" style="margin-top:8px">
+          <thead><tr><th>Item</th><th>Amount</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <div class="bar" style="margin-top:6px">
+          <button id="copyOrders" class="btn primary">Copy as text</button>
+        </div>
+      </div>
+
+      <div>
+        <label for="notes">Notes</label>
+        <textarea id="notes" placeholder="Notepad to have to defrief"></textarea>
+      </div>
+
+      <div class="bar">
+        <button id="saveNight" class="btn primary">Save Night</button>
+        <button id="newNight" class="btn ghost">New Night</button>
+        <button id="copy" class="btn primary">Kopier PR-Markdown</button>
+        <button id="reset" class="btn ghost">Reset sheet</button>
+      </div>
+
+      <div>
+        <label for="preview">Preview</label>
+        <textarea id="preview" readonly></textarea>
+      </div>
+
+      <div class="footer">Developed by Franksen, For use in 3MED during Operation nights</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
